@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <script type="text/javascript">
+    function calc(){
+    var num1= document.getElementById("num1").value;
+    var num2= document.getElementById("num2").value;
+    num1 = parseFloat(num1);
+    num2 = parseFloat(num2);
+    var result = num1+num2;
+    document.getElementById("result").value=result;
+
+    }
+  </script>
+  <body>
+    <style media="screen">
+      input{
+        width:50px;
+      }
+    </style>
+    <input type="text" id="num1"> +
+    <input type="text" id="num2" >=
+    <input type="text" id="result" >
+    <input type="button" value="运算" onclick="calc()">
+    <br>
+    <br>
+<style>
+      body{
+        font-family:宋体;
+      }
+      span{
+        display:inline-block;
+        display-style:box;
+        border: 1px solid lightgray;
+        width:120px;
+        margin-bottom:5px;
+      }
+
+      button#generate{
+        width:80px;
+        height:30px;
+      }
+
+      textarea{
+        width:100%;
+        height:150px;
+        margin-top:20px;
+      }
+</style>
+
+    <span>地名:</span> <input type="text" id ="location" >
+    <span>公司类型:</span> <input type="text" id ="companyType" >
+    <br>
+    <span>公司名称:</span> <input type="text" id ="companyName" >
+    <span>老板姓名:</span> <input type="text" id ="bossName" >
+    <br>
+    <span>money:</span> <input type="text" id ="money" >
+    <span>产品:</span> <input type="text" id ="product" >
+    <br>
+    <span>价格计量单位:</span> <input type="text" id ="unit" >
+    <br>
+    <div align="center">
+    <button id="generate" onclick="generate()">生成</button>
+    <br>
+    <textarea id="texts"></textarea>
+    </div>
+
+    <br>
+
+    
+  </body>
+  <script>
+  function generate(){
+     var location = $("location");
+     var companyType= $("companyType");
+     var companyName= $("companyName");
+     var bossName= $("bossName");
+     var money= $("money");
+     var product= $("product");
+     var unit= $("unit");
+
+     var result  = location +"最大"+companyType+companyName+"倒闭了，王八蛋老板"+bossName+"吃喝嫖赌，欠下了"+money+"个亿，"
+                              + "带着他的小姨子跑了!我们没有办法，拿着"+product+"抵工资!原价都是一"+unit+"多、两"+unit+"多、三"+unit+"多的"+product+"，"
+                              + "现在全部只卖二十块，统统只要二十块!"+bossName+"王八蛋，你不是人!我们辛辛苦苦给你干了大半年，"
+                              + "你不发工资，你还我血汗钱，还我血汗钱!";
+
+     document.getElementById("texts").value=result;
+
+  }
+
+  function $(id){
+     var value = document.getElementById(id).value;
+     return value;
+  }
+
+  </script>
+</html>
